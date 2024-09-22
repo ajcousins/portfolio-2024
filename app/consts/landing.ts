@@ -1,6 +1,6 @@
 export const colours = {
   menuObjects: '000000',
-  shadows: '625940', // 'aa9b72',
+  shadows: '000000', // 'aa9b72',
   sun: 'ffffff',
   background: '', // value controled via CSS
 }

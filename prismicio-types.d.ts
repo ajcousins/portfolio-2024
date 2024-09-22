@@ -4,7 +4,7 @@ import type * as prismic from "@prismicio/client";
 
 type Simplify<T> = { [KeyType in keyof T]: T[KeyType] };
 
-type ProjectPageDocumentDataSlicesSlice = HeroSlice;
+type ProjectPageDocumentDataSlicesSlice = ProjectInfoSlice | HeroSlice;
 
 /**
  * Content for Project Page documents
@@ -241,6 +241,172 @@ type HeroSliceVariation = HeroSliceDefault | HeroSliceImageRight;
  */
 export type HeroSlice = prismic.SharedSlice<"hero", HeroSliceVariation>;
 
+/**
+ * Item in *ProjectInfo → Default → Primary → Screenshots*
+ */
+export interface ProjectInfoSliceDefaultPrimaryScreenshotsItem {
+  /**
+   * Screenshot field in *ProjectInfo → Default → Primary → Screenshots*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: project_info.default.primary.screenshots[].screenshot
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  screenshot: prismic.ImageField<never>;
+}
+
+/**
+ * Item in *ProjectInfo → Default → Primary → Links*
+ */
+export interface ProjectInfoSliceDefaultPrimaryLinksItem {
+  /**
+   * CTA Label field in *ProjectInfo → Default → Primary → Links*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: project_info.default.primary.links[].cta_label
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  cta_label: prismic.KeyTextField;
+
+  /**
+   * CTA URL field in *ProjectInfo → Default → Primary → Links*
+   *
+   * - **Field Type**: Link
+   * - **Placeholder**: *None*
+   * - **API ID Path**: project_info.default.primary.links[].cta_url
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  cta_url: prismic.LinkField;
+}
+
+/**
+ * Item in *ProjectInfo → Default → Primary → Technologies*
+ */
+export interface ProjectInfoSliceDefaultPrimaryTechnologiesItem {
+  /**
+   * Technology field in *ProjectInfo → Default → Primary → Technologies*
+   *
+   * - **Field Type**: Select
+   * - **Placeholder**: *None*
+   * - **API ID Path**: project_info.default.primary.technologies[].technology
+   * - **Documentation**: https://prismic.io/docs/field#select
+   */
+  technology: prismic.SelectField<
+    "Javascript" | "Typescript" | "Node JS" | "Python" | "AWS"
+  >;
+}
+
+/**
+ * Primary content in *ProjectInfo → Default → Primary*
+ */
+export interface ProjectInfoSliceDefaultPrimary {
+  /**
+   * Project Title field in *ProjectInfo → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: project_info.default.primary.project_title
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  project_title: prismic.KeyTextField;
+
+  /**
+   * Intro Text field in *ProjectInfo → Default → Primary*
+   *
+   * - **Field Type**: Rich Text
+   * - **Placeholder**: *None*
+   * - **API ID Path**: project_info.default.primary.intro_text
+   * - **Documentation**: https://prismic.io/docs/field#rich-text-title
+   */
+  intro_text: prismic.RichTextField;
+
+  /**
+   * Square Project Thumbnail field in *ProjectInfo → Default → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: project_info.default.primary.square_project_thumbnail
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  square_project_thumbnail: prismic.ImageField<never>;
+
+  /**
+   * Banner field in *ProjectInfo → Default → Primary*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: project_info.default.primary.banner
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  banner: prismic.ImageField<never>;
+
+  /**
+   * Screenshots field in *ProjectInfo → Default → Primary*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: project_info.default.primary.screenshots[]
+   * - **Documentation**: https://prismic.io/docs/field#group
+   */
+  screenshots: prismic.GroupField<
+    Simplify<ProjectInfoSliceDefaultPrimaryScreenshotsItem>
+  >;
+
+  /**
+   * Links field in *ProjectInfo → Default → Primary*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: project_info.default.primary.links[]
+   * - **Documentation**: https://prismic.io/docs/field#group
+   */
+  links: prismic.GroupField<Simplify<ProjectInfoSliceDefaultPrimaryLinksItem>>;
+
+  /**
+   * Technologies field in *ProjectInfo → Default → Primary*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: project_info.default.primary.technologies[]
+   * - **Documentation**: https://prismic.io/docs/field#group
+   */
+  technologies: prismic.GroupField<
+    Simplify<ProjectInfoSliceDefaultPrimaryTechnologiesItem>
+  >;
+}
+
+/**
+ * Default variation for ProjectInfo Slice
+ *
+ * - **API ID**: `default`
+ * - **Description**: Default
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type ProjectInfoSliceDefault = prismic.SharedSliceVariation<
+  "default",
+  Simplify<ProjectInfoSliceDefaultPrimary>,
+  never
+>;
+
+/**
+ * Slice variation for *ProjectInfo*
+ */
+type ProjectInfoSliceVariation = ProjectInfoSliceDefault;
+
+/**
+ * ProjectInfo Shared Slice
+ *
+ * - **API ID**: `project_info`
+ * - **Description**: ProjectInfo
+ * - **Documentation**: https://prismic.io/docs/slice
+ */
+export type ProjectInfoSlice = prismic.SharedSlice<
+  "project_info",
+  ProjectInfoSliceVariation
+>;
+
 declare module "@prismicio/client" {
   interface CreateClient {
     (
@@ -261,6 +427,13 @@ declare module "@prismicio/client" {
       HeroSliceVariation,
       HeroSliceDefault,
       HeroSliceImageRight,
+      ProjectInfoSlice,
+      ProjectInfoSliceDefaultPrimaryScreenshotsItem,
+      ProjectInfoSliceDefaultPrimaryLinksItem,
+      ProjectInfoSliceDefaultPrimaryTechnologiesItem,
+      ProjectInfoSliceDefaultPrimary,
+      ProjectInfoSliceVariation,
+      ProjectInfoSliceDefault,
     };
   }
 }

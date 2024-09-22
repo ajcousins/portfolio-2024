@@ -1,0 +1,119 @@
+{
+  "id": "project_info",
+  "type": "SharedSlice",
+  "name": "ProjectInfo",
+  "description": "ProjectInfo",
+  "variations": [
+    {
+      "id": "default",
+      "name": "Default",
+      "docURL": "...",
+      "version": "initial",
+      "description": "Default",
+      "imageUrl": "",
+      "primary": {
+        "project_title": {
+          "type": "Text",
+          "config": {
+            "label": "Project Title",
+            "placeholder": ""
+          }
+        },
+        "intro_text": {
+          "type": "StructuredText",
+          "config": {
+            "label": "Intro Text",
+            "placeholder": "",
+            "allowTargetBlank": true,
+            "multi": "paragraph,heading3,strong,em"
+          }
+        },
+        "square_project_thumbnail": {
+          "type": "Image",
+          "config": {
+            "label": "Square Project Thumbnail",
+            "constraint": {
+              "width": 150,
+              "height": 150
+            },
+            "thumbnails": []
+          }
+        },
+        "banner": {
+          "type": "Image",
+          "config": {
+            "label": "Banner",
+            "constraint": {},
+            "thumbnails": []
+          }
+        },
+        "screenshots": {
+          "type": "Group",
+          "config": {
+            "label": "Screenshots",
+            "repeat": true,
+            "fields": {
+              "screenshot": {
+                "type": "Image",
+                "config": {
+                  "label": "Screenshot",
+                  "constraint": {},
+                  "thumbnails": []
+                }
+              }
+            }
+          }
+        },
+        "links": {
+          "type": "Group",
+          "config": {
+            "label": "Links",
+            "repeat": true,
+            "fields": {
+              "cta_label": {
+                "type": "Text",
+                "config": {
+                  "label": "CTA Label",
+                  "placeholder": ""
+                }
+              },
+              "cta_url": {
+                "type": "Link",
+                "config": {
+                  "label": "CTA URL",
+                  "placeholder": "",
+                  "allowTargetBlank": false,
+                  "select": null
+                }
+              }
+            }
+          }
+        },
+        "technologies": {
+          "type": "Group",
+          "config": {
+            "label": "Technologies",
+            "repeat": true,
+            "fields": {
+              "technology": {
+                "type": "Select",
+                "config": {
+                  "label": "Technology",
+                  "placeholder": "",
+                  "options": [
+                    "Javascript",
+                    "Typescript",
+                    "Node JS",
+                    "Python",
+                    "AWS"
+                  ]
+                }
+              }
+            }
+          }
+        }
+      },
+      "items": {}
+    }
+  ]
+}
