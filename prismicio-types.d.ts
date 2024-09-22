@@ -4,6 +4,97 @@ import type * as prismic from "@prismicio/client";
 
 type Simplify<T> = { [KeyType in keyof T]: T[KeyType] };
 
+/**
+ * Item in *Landing → Projects*
+ */
+export interface LandingDocumentDataProjectsItem {
+  /**
+   * Project field in *Landing → Projects*
+   *
+   * - **Field Type**: Content Relationship
+   * - **Placeholder**: *None*
+   * - **API ID Path**: landing.projects[].project
+   * - **Documentation**: https://prismic.io/docs/field#link-content-relationship
+   */
+  project: prismic.ContentRelationshipField<"project_page">;
+}
+
+type LandingDocumentDataSlicesSlice = never;
+
+/**
+ * Content for Landing documents
+ */
+interface LandingDocumentData {
+  /**
+   * Projects field in *Landing*
+   *
+   * - **Field Type**: Group
+   * - **Placeholder**: *None*
+   * - **API ID Path**: landing.projects[]
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#group
+   */
+  projects: prismic.GroupField<Simplify<LandingDocumentDataProjectsItem>>;
+
+  /**
+   * Slice Zone field in *Landing*
+   *
+   * - **Field Type**: Slice Zone
+   * - **Placeholder**: *None*
+   * - **API ID Path**: landing.slices[]
+   * - **Tab**: Main
+   * - **Documentation**: https://prismic.io/docs/field#slices
+   */
+  slices: prismic.SliceZone<LandingDocumentDataSlicesSlice> /**
+   * Meta Title field in *Landing*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: A title of the page used for social media and search engines
+   * - **API ID Path**: landing.meta_title
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */;
+  meta_title: prismic.KeyTextField;
+
+  /**
+   * Meta Description field in *Landing*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: A brief summary of the page
+   * - **API ID Path**: landing.meta_description
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  meta_description: prismic.KeyTextField;
+
+  /**
+   * Meta Image field in *Landing*
+   *
+   * - **Field Type**: Image
+   * - **Placeholder**: *None*
+   * - **API ID Path**: landing.meta_image
+   * - **Tab**: SEO & Metadata
+   * - **Documentation**: https://prismic.io/docs/field#image
+   */
+  meta_image: prismic.ImageField<never>;
+}
+
+/**
+ * Landing document from Prismic
+ *
+ * - **API ID**: `landing`
+ * - **Repeatable**: `false`
+ * - **Documentation**: https://prismic.io/docs/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type LandingDocument<Lang extends string = string> =
+  prismic.PrismicDocumentWithoutUID<
+    Simplify<LandingDocumentData>,
+    "landing",
+    Lang
+  >;
+
 type ProjectPageDocumentDataSlicesSlice = ProjectInfoSlice | HeroSlice;
 
 /**
@@ -69,7 +160,7 @@ export type ProjectPageDocument<Lang extends string = string> =
     Lang
   >;
 
-export type AllDocumentTypes = ProjectPageDocument;
+export type AllDocumentTypes = LandingDocument | ProjectPageDocument;
 
 /**
  * Primary content in *Hero → Default → Primary*
@@ -417,6 +508,10 @@ declare module "@prismicio/client" {
 
   namespace Content {
     export type {
+      LandingDocument,
+      LandingDocumentData,
+      LandingDocumentDataProjectsItem,
+      LandingDocumentDataSlicesSlice,
       ProjectPageDocument,
       ProjectPageDocumentData,
       ProjectPageDocumentDataSlicesSlice,
