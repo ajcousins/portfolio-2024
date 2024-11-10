@@ -404,6 +404,16 @@ export interface ProjectInfoSliceDefaultPrimary {
   project_title: prismic.KeyTextField;
 
   /**
+   * Year field in *ProjectInfo → Default → Primary*
+   *
+   * - **Field Type**: Text
+   * - **Placeholder**: 2020
+   * - **API ID Path**: project_info.default.primary.year
+   * - **Documentation**: https://prismic.io/docs/field#key-text
+   */
+  year: prismic.KeyTextField;
+
+  /**
    * Intro Text field in *ProjectInfo → Default → Primary*
    *
    * - **Field Type**: Rich Text

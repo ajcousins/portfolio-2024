@@ -19,6 +19,13 @@
             "placeholder": ""
           }
         },
+        "year": {
+          "type": "Text",
+          "config": {
+            "label": "Year",
+            "placeholder": "2020"
+          }
+        },
         "intro_text": {
           "type": "StructuredText",
           "config": {

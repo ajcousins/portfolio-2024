@@ -13,38 +13,41 @@ export type ProjectInfoProps = SliceComponentProps<Content.ProjectInfoSlice>;
  */
 const ProjectInfo = ({ slice }: ProjectInfoProps): JSX.Element => {
   return (
-    <section
-      className={styles['project-section']}
-      data-slice-type={slice.slice_type}
-      data-slice-variation={slice.variation}
-    >
-      <div className={styles.columns}>
-        <div className={styles['column-left']}>
+    <div className={styles.page} data-slice-type={slice.slice_type} data-slice-variation={slice.variation}>
+      <section className={styles['narrow-section']}>
+        <div>
           {isFilled.image(slice.primary.square_project_thumbnail) && (
             <PrismicNextImage
               field={slice.primary.square_project_thumbnail}
               className={styles.thumb}
             />
           )}
-          {slice.primary.project_title && (
-            <h1>
-              {slice.primary.project_title}
-            </h1>
-          )}
-          {isFilled.richText(slice.primary.intro_text) && (
-            <PrismicRichText field={slice.primary.intro_text} />
-          )}
+          <div className={styles['headings-wrapper']}>
+            {slice.primary.project_title && (
+              <h1 className={styles['main-heading']}>
+                {slice.primary.project_title}
+              </h1>
+            )}
+            {isFilled.keyText(slice.primary.year) &&
+              <h6 className={styles['sub-heading']}>{slice.primary.year}</h6>
+            }
+          </div>
         </div>
-        <div className={styles['column-right']}>
-          {isFilled.image(slice.primary.banner) && (
-            <PrismicNextImage
-              field={slice.primary.banner}
-            // className="es-fullpage-hero__image"
-            />
-          )}
-        </div>
-      </div>
-    </section>
+      </section>
+      <section className={styles['banner-wrapper']}>
+        {isFilled.image(slice.primary.banner) && (
+          <PrismicNextImage
+            field={slice.primary.banner}
+            className={styles['banner-image']}
+          />
+        )}
+      </section>
+      <section className={`${styles['narrow-section']} ${styles['grid']}`}>
+        {isFilled.richText(slice.primary.intro_text) && (
+          <PrismicRichText field={slice.primary.intro_text} />
+        )}
+      </section>
+    </div>
   );
 };
 

@@ -146,6 +146,11 @@
 						}
 					}
 				]
+			},
+			"year": {
+				"__TYPE__": "FieldContent",
+				"value": "whole",
+				"type": "Text"
 			}
 		},
 		"items": []
