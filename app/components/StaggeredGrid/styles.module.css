@@ -1,8 +1,9 @@
 .wrapper {
-  background-color: yellow;
+  background-color: cyan;
+  display: flex;
+  justify-content: center;
 }
 
 .thumb {
-  /* height: 100px; */
   border-radius: 100%;
 }

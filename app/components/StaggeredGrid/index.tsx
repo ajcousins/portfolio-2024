@@ -7,14 +7,11 @@ import Link from "next/link";
 import { PrismicImage } from "@prismicio/react";
 import { useThumbRows } from "@/app/hooks/useThumbRows";
 
+const THUMB_DIAMETER = 180;
+
 interface IProps {
   prismicDocs: PrismicDocumentWithUID[]
 }
-
-
-const THUMB_DIAMETER = 150;
-
-
 
 export default function StaggeredGrid({ prismicDocs }: IProps): ReactElement {
 
@@ -26,16 +23,6 @@ export default function StaggeredGrid({ prismicDocs }: IProps): ReactElement {
     thumb: doc.data.slices[0].primary.square_project_thumbnail
   }));
   const thumbRows = useThumbRows(thumbProps, width, THUMB_DIAMETER)
-
-
-
-  // useEffect(() => {
-  //   console.log('width:', width);
-  // }, [width])
-
-  // useEffect(() => {
-  //   console.log('thumbRows:', thumbRows);
-  // }, [thumbRows])
 
   useEffect(() => {
     const handleResize = () => {
@@ -51,35 +38,26 @@ export default function StaggeredGrid({ prismicDocs }: IProps): ReactElement {
     }
   }, [])
 
-
   return (
-    <div ref={wrapperRef} className={styles.wrapper}>
-      <div>
-        {thumbRows.map((row, i) => {
-
-          /* ROW */
-          return (
-            <div key={`row-${i}`} style={{
-              marginLeft: `${i % 2 === 1 ? 0 : THUMB_DIAMETER / 2}px`,
-              marginBottom: '-24px'
-            }}>
-              {row.map((el, elIndex) => {
-
-                /* THUMB */
-                return (
-                  <Link key={`thumb-${elIndex}`} href={`/portfolio/${el.uid}`}>
-                    <PrismicImage
-                      style={{ height: `${THUMB_DIAMETER}px` }}
-                      field={el.thumb}
-                      className={styles.thumb}
-                    />
-                  </Link>
-                )
-              })}
-            </div>
+    <div ref={wrapperRef}>
+      {thumbRows.map((row, i) => (
+        <div
+          className={styles.wrapper}
+          key={`row-${i}`}
+        >
+          {row.map((el, elIndex) => (
+            <Link key={`thumb-${elIndex}`} href={`/portfolio/${el.uid}`}>
+              <PrismicImage
+                style={{ height: `${THUMB_DIAMETER}px` }}
+                field={el.thumb}
+                className={styles.thumb}
+              />
+            </Link>
           )
-        })}
-      </div>
+          )}
+        </div>
+      )
+      )}
     </div>
   )
 }
