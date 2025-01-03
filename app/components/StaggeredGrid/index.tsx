@@ -7,7 +7,7 @@ import Link from "next/link";
 import { PrismicImage } from "@prismicio/react";
 import { useThumbRows } from "@/app/hooks/useThumbRows";
 
-const THUMB_DIAMETER = 180;
+const THUMB_DIAMETER = 90;
 
 interface IProps {
   prismicDocs: PrismicDocumentWithUID[]
@@ -39,7 +39,7 @@ export default function StaggeredGrid({ prismicDocs }: IProps): ReactElement {
   }, [])
 
   return (
-    <div ref={wrapperRef}>
+    <div className={styles['outer-wrapper']} ref={wrapperRef}>
       {thumbRows.map((row, i) => (
         <div
           className={styles.wrapper}

@@ -24,7 +24,6 @@ export default async function PortfolioLanding() {
     .fill(projectDocs[0])
 
   return <>
-    Portfolio
     <div className={styles.wrapper}>
       <StaggeredGrid prismicDocs={docs} />
     </div>
