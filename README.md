@@ -31,3 +31,8 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/bui
 
 ## Design References
 - [Project Pages](https://together.agency/services/)
+  - Landing image
+  - Colour transitions on hover
+  - Animated images
+  - Text hierarchy: Different fonts between body and aside text
+  - Animated lists: For navigation bar?
