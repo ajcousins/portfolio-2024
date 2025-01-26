@@ -1,6 +1,7 @@
 import { Content, isFilled } from "@prismicio/client";
-import { PrismicRichText, SliceComponentProps } from "@prismicio/react";
+import { SliceComponentProps } from "@prismicio/react";
 import { ImageGallery, ProjectTitle } from "@/app/components/lib/02-organs";
+import { BodyText } from "@/app/components/lib/01-cells";
 
 export type ProjectInfoProps = SliceComponentProps<Content.ProjectInfoSlice>;
 
@@ -16,20 +17,14 @@ const ProjectInfo = ({ slice }: ProjectInfoProps): JSX.Element => {
           />
         )}
       </section>
-      <ImageGallery
-        images={slice.primary.screenshots}
-      />
-      {/* <section className={styles['banner-wrapper']}>
-        {isFilled.image(slice.primary.banner) && (
-          <PrismicNextImage
-            field={slice.primary.banner}
-            className={styles['banner-image']}
-          />
-        )}
-      </section> */}
+      <section>
+        <ImageGallery
+          images={slice.primary.screenshots}
+        />
+      </section>
       <section>
         {isFilled.richText(slice.primary.intro_text) && (
-          <PrismicRichText field={slice.primary.intro_text} />
+          <BodyText richText={slice.primary.intro_text} />
         )}
       </section>
     </div>

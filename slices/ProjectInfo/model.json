@@ -32,7 +32,7 @@
             "label": "Intro Text",
             "placeholder": "",
             "allowTargetBlank": true,
-            "multi": "paragraph,heading3,strong,em"
+            "multi": "paragraph,strong,em,hyperlink,preformatted,list-item,o-list-item"
           }
         },
         "square_project_thumbnail": {

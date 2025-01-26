@@ -1,4 +1,4 @@
-import ProjectTitle from "./ProjectTitle";
-import ImageGallery from "./ImageGallery";
+import ProjectTitle from './ProjectTitle';
+import ImageGallery from './ImageGallery';
 
-export { ProjectTitle, ImageGallery }
+export { ProjectTitle, ImageGallery };

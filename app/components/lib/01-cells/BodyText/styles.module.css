@@ -1,0 +1,15 @@
+.wrapper {
+  margin-bottom: 2em;
+}
+
+.wrapper a {
+  font-weight: 500;
+  color: #ffff6a;
+}
+
+.wrapper pre {
+  line-height: 1.5em;
+  background-color: #ffffff11;
+  padding: 1em;
+  border-radius: 0.5em;
+}
