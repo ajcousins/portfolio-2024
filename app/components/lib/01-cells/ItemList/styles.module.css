@@ -1,0 +1,17 @@
+.wrapper {
+  font-family: "Roboto Mono";
+  font-size: 0.75rem;
+  line-height: 2em;
+}
+
+.wrapper ul {
+  margin-top: 0;
+  padding-left: 1.5em;
+}
+
+.wrapper h3 {
+  font-family: "Roboto Mono";
+  font-size: 0.75rem;
+  font-weight: 700;
+  margin: 0;
+}

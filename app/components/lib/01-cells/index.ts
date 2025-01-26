@@ -1,3 +1,4 @@
 import BodyText from './BodyText';
+import ItemList from './ItemList';
 
-export { BodyText };
+export { BodyText, ItemList };
