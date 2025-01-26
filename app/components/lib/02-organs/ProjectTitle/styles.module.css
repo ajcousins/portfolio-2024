@@ -6,7 +6,7 @@
 
 .title-container {
   display: flex;
-  margin-bottom: 2em;
+  margin-bottom: 4em;
 }
 
 .title-container {
@@ -23,4 +23,20 @@
 .title-inner > h1,
 .title-inner > h3 {
   margin: 0;
+}
+
+/* When the browser is at most 750px and under */
+@media screen and (max-width: 550px) {
+  .thumb {
+    height: 4rem;
+    width: 4rem;
+  }
+
+  .title-container {
+    margin-bottom: 2em;
+  }
+
+  .title-inner {
+    margin-left: 13px;
+  }
 }

@@ -1,0 +1,13 @@
+.page {
+  padding-top: 200px;
+  padding-left: 44px;
+  padding-right: 44px;
+}
+
+/* When the browser is at most 750px and under */
+@media screen and (max-width: 750px) {
+  .page {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+}

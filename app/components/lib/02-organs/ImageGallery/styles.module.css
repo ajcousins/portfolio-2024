@@ -1,9 +1,8 @@
 .wrapper {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
-  grid-auto-rows: auto;
   gap: 1em;
-  justify-content: start;
+  margin-bottom: 9.5em;
 }
 
 .image-container {
@@ -47,7 +46,6 @@
 @media screen and (max-width: 950px) {
   .wrapper {
     grid-template-columns: repeat(3, 1fr);
-    background-color: cyan;
   }
 }
 
@@ -55,6 +53,7 @@
 @media screen and (max-width: 750px) {
   .wrapper {
     grid-template-columns: repeat(2, 1fr);
+    margin-bottom: 5.5em;
   }
 
   .grid-span-1 {
