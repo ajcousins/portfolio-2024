@@ -1,46 +1,5 @@
 .page {
-  padding-top: 40vh;
-}
-
-.narrow-section {
-  width: 900px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.grid {
-  display: grid;
-  grid-template-columns: 25rem 1fr;
-}
-
-.thumb {
-  border-radius: 100%;
-  box-shadow: rgba(0, 0, 0, 1) 0px 10px 15px -3px, rgba(0, 0, 0, 1) 0px 4px 6px -2px;
-}
-
-.headings-wrapper {
-  margin-top: 0.5rem;
-  margin-bottom: 2rem;
-}
-
-.main-heading {
-  margin-top: 0;
-  margin-bottom: 0;
-}
-
-.sub-heading {
-  font-size: 1rem;
-  margin-top: 0;
-  margin-bottom: 0;
-}
-
-.banner-wrapper {
-  display: flex;
-  justify-content: center;
-  width: 100%;
-}
-
-.banner-image {
-  max-width: 100%;
-  height: auto;
+  padding-top: 200px;
+  padding-left: 44px;
+  padding-right: 44px;
 }
