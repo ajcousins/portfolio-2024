@@ -1,19 +1,17 @@
 import { KeyTextField } from "@prismicio/client";
 import styles from "../ItemList/styles.module.css";
 
-export interface SimpleListItem {
-  [key: string]: string;
+export interface LinkListItem {
+  cta_label: KeyTextField;
+  cta_url: {
+    link_type: string;
+    url?: string;
+  }
 }
 
 interface IProps {
   groupLabel: string;
-  items: {
-    cta_label: KeyTextField;
-    cta_url: {
-      link_type: string;
-      url?: string;
-    }
-  }[]
+  items: LinkListItem[];
 }
 
 const LinkList = ({ groupLabel, items }: IProps): JSX.Element => {

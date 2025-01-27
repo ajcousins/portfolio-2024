@@ -1,8 +1,8 @@
 import { Content, isFilled } from "@prismicio/client";
 import { SliceComponentProps } from "@prismicio/react";
 import { ImageGallery, ProjectTitle } from "@/app/components/lib/02-organs";
-import { BodyText, ItemList, LinkList } from "@/app/components/lib/01-cells";
 import { SimpleListItem } from "@/app/components/lib/01-cells/ItemList";
+import { ProjectInformation } from "@/app/components/lib/03-organisms";
 
 export type ProjectInfoProps = SliceComponentProps<Content.ProjectInfoSlice>;
 
@@ -24,17 +24,11 @@ const ProjectInfo = ({ slice }: ProjectInfoProps): JSX.Element => {
         />
       </section>
       <section>
-        {isFilled.richText(slice.primary.intro_text) && (
-          <BodyText richText={slice.primary.intro_text} />
-        )}
-      </section>
-      <section>
-        {isFilled.group(slice.primary.technologies) &&
-          <>
-            <ItemList groupLabel="Technologies" items={slice.primary.technologies as SimpleListItem[]} />
-            <LinkList groupLabel="Links" items={slice.primary.links} />
-          </>
-        }
+        <ProjectInformation 
+          description={slice.primary.intro_text}
+          technologies={slice.primary.technologies as SimpleListItem[]}
+          links={slice.primary.links}
+        />
       </section>
     </div>
   );
