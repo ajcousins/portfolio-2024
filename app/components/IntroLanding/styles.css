@@ -1,0 +1,10 @@
+.text-objs {
+  cursor: pointer;
+  user-select: none;
+  stroke: #00000000;
+  stroke-width: 18px;
+
+  &:hover {
+    fill: white;
+  }
+}

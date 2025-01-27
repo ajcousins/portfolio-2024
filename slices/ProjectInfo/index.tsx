@@ -1,7 +1,7 @@
 import { Content, isFilled } from "@prismicio/client";
 import { SliceComponentProps } from "@prismicio/react";
 import { ImageGallery, ProjectTitle } from "@/app/components/lib/02-organs";
-import { BodyText, ItemList } from "@/app/components/lib/01-cells";
+import { BodyText, ItemList, LinkList } from "@/app/components/lib/01-cells";
 import { SimpleListItem } from "@/app/components/lib/01-cells/ItemList";
 
 export type ProjectInfoProps = SliceComponentProps<Content.ProjectInfoSlice>;
@@ -30,7 +30,10 @@ const ProjectInfo = ({ slice }: ProjectInfoProps): JSX.Element => {
       </section>
       <section>
         {isFilled.group(slice.primary.technologies) &&
-          <ItemList items={slice.primary.technologies as SimpleListItem[]} />
+          <>
+            <ItemList groupLabel="Technologies" items={slice.primary.technologies as SimpleListItem[]} />
+            <LinkList groupLabel="Links" items={slice.primary.links} />
+          </>
         }
       </section>
     </div>

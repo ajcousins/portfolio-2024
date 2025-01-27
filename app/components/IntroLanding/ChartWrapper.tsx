@@ -1,6 +1,7 @@
 'use client'
-import React ,{ useRef, useState, useEffect } from 'react'
-import D3Chart from './D3Chart';
+import React, { useRef, useState, useEffect } from 'react'
+import D3Chart from '.';
+import './styles.css';
 
 export default function ChartWrapper() {
   const chartArea = useRef(null);

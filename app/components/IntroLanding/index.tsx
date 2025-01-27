@@ -5,7 +5,7 @@ import {
   xTranslationMax,
   sunObject,
   colours,
-} from '../consts/landing';
+} from '../../consts/landing';
 import {
   newPointFromReference,
   referencePoints,
@@ -14,7 +14,7 @@ import {
   scaleTranslate,
   numToHex,
 } from './helpers';
-import { getCookie, setCookie } from '../helpers/cookies';
+import { getCookie, setCookie } from '../../helpers/cookies';
 
 const ANIMATION_FRAME_RATE = 1000 / 30; // FPS
 
@@ -254,10 +254,10 @@ export default class D3Chart {
         translate(${this.anchorsTrans[i]?.x ?? 0}, 
           ${this.anchorsTrans[i]?.y ?? 0}) 
         scale(${getTextScale(
-          this.textObjOriginalBounds[i],
-          window.innerHeight,
-          menuObjects[i]?.heightPercent ?? 0
-        )}) 
+        this.textObjOriginalBounds[i],
+        window.innerHeight,
+        menuObjects[i]?.heightPercent ?? 0
+      )}) 
         rotate(-90)
       `
     );

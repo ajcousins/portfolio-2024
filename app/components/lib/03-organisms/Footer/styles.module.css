@@ -2,17 +2,11 @@
   height: 15em;
   width: 100%;
   margin-top: 15em;
-  background-color: #111111;
+  background-color: var(--dark-background);
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 50px 36px -28px inset;
 }
 
 .wrapper a {
   font-weight: 500;
-  color: #ffff6a;
-}
-
-.wrapper pre {
-  line-height: 1.5em;
-  background-color: #ffffff11;
-  padding: 1em;
-  border-radius: 0.5em;
+  color: var(--link-color);
 }

@@ -4,12 +4,12 @@
 
 .wrapper a {
   font-weight: 500;
-  color: #ffff6a;
+  color: var(--link-color);
 }
 
 .wrapper pre {
   line-height: 1.5em;
-  background-color: #ffffff11;
+  background-color: var(--call-out-box-background);
   padding: 1em;
   border-radius: 0.5em;
 }
