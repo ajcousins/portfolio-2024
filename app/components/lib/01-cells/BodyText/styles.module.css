@@ -2,6 +2,11 @@
   margin-bottom: 2em;
 }
 
+.wrapper p {
+  margin: 0;
+  margin-bottom: 1em;
+}
+
 .wrapper a {
   font-weight: 500;
   color: var(--link-color);
@@ -12,4 +17,5 @@
   background-color: var(--call-out-box-background);
   padding: 1em;
   border-radius: 0.5em;
+  overflow-y: auto;
 }

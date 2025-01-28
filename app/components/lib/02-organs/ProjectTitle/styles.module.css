@@ -25,7 +25,6 @@
   margin: 0;
 }
 
-/* When the browser is at most 750px and under */
 @media screen and (max-width: 550px) {
   .thumb {
     height: 4rem;

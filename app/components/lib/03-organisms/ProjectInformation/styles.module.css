@@ -1,17 +1,88 @@
-/* .wrapper {
-  height: 15em;
-  width: 100%;
-  margin-top: 15em;
-  background-color: var(--dark-background);
-  box-shadow: rgba(0, 0, 0, 0.35) 0px 50px 36px -28px inset;
+.wrapper {
+  margin: 0 10.5em;
+  display: grid;
+  grid-template-columns: 1fr 210px;
+  gap: 6.5em;
 }
 
-.wrapper a {
-  font-weight: 500;
-  color: var(--link-color);
-} */
+.links-section {
+  display: flex;
+  flex-direction: column;
+  gap: 2em;
+  padding-left: 2em;
+  /* https://webspe.net/tools/en/border/ */
+  background-image: repeating-linear-gradient(
+    180deg,
+    #fff,
+    #fff 8px,
+    transparent 8px,
+    transparent 12px
+  );
+  background-position: left top;
+  background-repeat: repeat-y;
+  background-size: 1px 100%;
+}
 
+@media screen and (max-width: 1050px) {
+  .wrapper {
+    margin: 0;
+  }
+}
 
-.wrapper {
-  /* background-color: yellow; */
+@media screen and (max-width: 950px) {
+  .wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 6.5em;
+  }
+
+  .links-section > div {
+    min-width: 180px;
+  }
+
+  .links-section {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 2em;
+    background-image: repeating-linear-gradient(
+        90deg,
+        #fff,
+        #fff 8px,
+        transparent 8px,
+        transparent 12px
+      ),
+      repeating-linear-gradient(
+        180deg,
+        #fff,
+        #fff 8px,
+        transparent 8px,
+        transparent 12px
+      ),
+      repeating-linear-gradient(
+        90deg,
+        #fff,
+        #fff 8px,
+        transparent 8px,
+        transparent 12px
+      ),
+      repeating-linear-gradient(
+        180deg,
+        #fff,
+        #fff 8px,
+        transparent 8px,
+        transparent 12px
+      );
+    background-position:
+      left top,
+      right top,
+      left bottom,
+      left top;
+    background-repeat: repeat-x, repeat-y, repeat-x, repeat-y;
+    background-size:
+      100% 1px,
+      1px 100%,
+      100% 1px,
+      1px 100%;
+  }
 }
