@@ -128,7 +128,7 @@
 								"technology",
 								{
 									"__TYPE__": "FieldContent",
-									"value": "Typescript",
+									"value": "AWS",
 									"type": "Select"
 								}
 							]

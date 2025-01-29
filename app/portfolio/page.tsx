@@ -20,12 +20,10 @@ export default async function PortfolioLanding() {
   }).filter(uid => uid !== null);
 
   const projectDocs = await Promise.all(projectUids.map(uid => client.getByUID('project_page', uid)));
-  const docs = new Array(10)
-    .fill(projectDocs[0])
 
   return <>
     <div className={styles.wrapper}>
-      <StaggeredGrid prismicDocs={docs} />
+      <StaggeredGrid prismicDocs={projectDocs} />
     </div>
   </>
 }

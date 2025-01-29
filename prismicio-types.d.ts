@@ -385,7 +385,29 @@ export interface ProjectInfoSliceDefaultPrimaryTechnologiesItem {
    * - **Documentation**: https://prismic.io/docs/field#select
    */
   technology: prismic.SelectField<
-    "Javascript" | "Typescript" | "Node JS" | "Python" | "AWS"
+    | "Javascript"
+    | "Typescript"
+    | "Node JS"
+    | "Python"
+    | "AWS"
+    | "React JS"
+    | "GraphQL"
+    | "Redux"
+    | "Express"
+    | "Mongo DB"
+    | "Sass"
+    | "MaterialUI"
+    | "Firebase"
+    | "Three JS"
+    | "Jest"
+    | "Three JS"
+    | "JWT"
+    | "Pug Templates"
+    | "Passport JS"
+    | "Flask"
+    | "SQLite"
+    | "Go"
+    | "Dynamo DB"
   >;
 }
 
