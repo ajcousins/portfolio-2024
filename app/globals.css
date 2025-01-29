@@ -26,7 +26,6 @@ body {
   background-color: var(--background);
   letter-spacing: -0.1px;
   font-family: var(--regular-font);
-  font-size: 0.8rem;
   font-weight: 300;
   margin: 0;
   padding: 0;
@@ -35,6 +34,7 @@ body {
 pre {
   font-family: var(--monospaced-font);
   font-weight: 400;
+  font-size: 1rem;
 }
 
 a {
@@ -47,8 +47,8 @@ svg {
 }
 
 p {
-  font-size: 1rem;
-  line-height: 1.4;
+  font-size: 1.25rem;
+  line-height: 1.6;
   font-weight: 300;
   font-style: normal;
 }

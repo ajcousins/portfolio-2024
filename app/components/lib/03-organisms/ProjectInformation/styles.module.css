@@ -1,7 +1,7 @@
 .wrapper {
-  margin: 0 10.5em;
+  margin: 0 5em;
   display: grid;
-  grid-template-columns: 1fr 210px;
+  grid-template-columns: 1fr 240px;
   gap: 6.5em;
 }
 
@@ -10,6 +10,7 @@
   flex-direction: column;
   gap: 2em;
   padding-left: 2em;
+  min-width: 280px;
   /* https://webspe.net/tools/en/border/ */
   background-image: repeating-linear-gradient(
     180deg,
@@ -37,7 +38,7 @@
   }
 
   .links-section > div {
-    min-width: 180px;
+    min-width: 240px;
   }
 
   .links-section {

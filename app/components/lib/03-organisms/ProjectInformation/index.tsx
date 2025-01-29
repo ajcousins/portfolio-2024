@@ -18,7 +18,7 @@ const ProjectInformation = ({ description, technologies, links }: IProps): JSX.E
       )}
     </div>
     <div className={styles["links-section"]}>
-      <ItemList groupLabel="Technologies" items={technologies as SimpleListItem[]} />
+      <ItemList groupLabel="Languages & Technologies" items={technologies as SimpleListItem[]} />
       <LinkList groupLabel="Links" items={links} />
     </div>
   </div>)
