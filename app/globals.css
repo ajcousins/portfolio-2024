@@ -42,6 +42,10 @@ a {
   color: var(--link-color);
 }
 
+a:hover {
+  color: var(--primary);
+}
+
 svg {
   height: 100%;
 }
@@ -60,8 +64,22 @@ h1 {
   letter-spacing: 0.1rem;
 }
 
+h2 {
+  font-size: 2rem;
+  font-family: var(--title-font);
+  font-weight: 350;
+  letter-spacing: 0.1rem;
+}
+
 h3 {
+  font-size: 1.75rem;
+  font-family: var(--title-font);
+  font-weight: 350;
+  letter-spacing: 0.1rem;
+}
+
+/* h3 {
   font-size: 1rem;
   font-family: var(--title-font);
   font-weight: 300;
-}
+} */

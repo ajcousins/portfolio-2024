@@ -1,0 +1,33 @@
+.location {
+  position: fixed;
+  top: 0;
+  right: 0;
+}
+
+.wrapper {
+  position: relative;
+  margin-top: 53px;
+  margin-right: 44px;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.wrapper a {
+  font-family: var(--title-font);
+  color: var(--foregroud);
+}
+
+.wrapper a:hover {
+  color: var(--primary);
+}
+
+.sun {
+  height: 18px;
+  width: 18px;
+  background-color: var(--foregroud);
+  border-radius: 100%;
+  position: absolute;
+  left: -28px;
+  transition: transform 0.3s cubic-bezier(0.68, -0.6, 0.32, 1.6);
+}

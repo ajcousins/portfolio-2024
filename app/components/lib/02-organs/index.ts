@@ -1,4 +1,5 @@
-import ProjectTitle from './ProjectTitle';
+import ErrorMessage from './ErrorMessage';
 import ImageGallery from './ImageGallery';
+import ProjectTitle from './ProjectTitle';
 
-export { ProjectTitle, ImageGallery };
+export { ErrorMessage, ImageGallery, ProjectTitle };
