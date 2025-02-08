@@ -10,20 +10,20 @@
   - Must show all projects
 
 - Porfolio page
-  - Finalise layout/ design 🟡
-  - Description text
-  - Hero image/ Images
-  - Links
-  - List of technologies
-  - Desktop & Mobile
+  - Finalise layout/ design 🟢
+  - Description text 🟢
+  - Hero image/ Images 🟢
+  - Links 🟢
+  - List of technologies 🟢
+  - Desktop & Mobile 🟢
 
 - Navigation
-  - Desktop
+  - Desktop 🟢
   - Mobile
 
 - About
-  - Description text
-  - List of languages and technologies
+  - Description text 🟢
+  - List of languages and technologies 
   - Relevant experience
   - Desktop & Mobile
 
@@ -40,4 +40,4 @@
     - Filterable?
 
 - Portfolio page
-  - Stack diagram
+  - Stack / architecture diagrams
